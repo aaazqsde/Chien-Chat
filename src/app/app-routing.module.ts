@@ -1,6 +1,6 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core'
-import {TestComponent} from './Animaux/test.component';
+
 import {TempoComponent} from './Animaux/tempo.component';
 import {ListAnimalComponent} from './Animaux/list-animal/list-animal.component';
 

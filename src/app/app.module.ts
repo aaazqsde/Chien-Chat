@@ -8,7 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import {TestComponent} from './Animaux/test.component';
+
 import {TempoComponent} from './Animaux/tempo.component';
 // import { ListAnimauxComponent } from './Animaux/list-animaux.component';
 
@@ -21,13 +21,12 @@ import { ListAnimalComponent } from './Animaux/list-animal/list-animal.component
     AppComponent,
     NavbarComponent,
 
-    TestComponent,
     TempoComponent,
 
 
     // ListAnimauxComponent
 
-    
+
     ListAnimalComponent
 
   ],
