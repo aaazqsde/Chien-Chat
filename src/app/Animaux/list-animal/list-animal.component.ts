@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-animal',
-  templateUrl: './list-animal.component.html',
-  styleUrls: ['./list-animal.component.css']
+  templateUrl: './list-animal.component.html'
 })
 export class ListAnimalComponent implements OnInit {
 
