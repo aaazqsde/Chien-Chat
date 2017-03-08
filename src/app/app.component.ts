@@ -7,6 +7,7 @@ import { ANIMAUX } from './mock-animaux';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   title = 'Comme chiens et chats !!!';
   animaux:Animal[]=null;
@@ -17,4 +18,5 @@ export class AppComponent implements OnInit {
   selectAnimal(animal:Animal) {
     console.log('vous avez selectionné '+ animal.nom);
   }
+
 }
