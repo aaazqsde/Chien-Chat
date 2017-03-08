@@ -7,19 +7,29 @@ import {AppRoutingModule} from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
 import {TestComponent} from './Animaux/test.component';
 import {TempoComponent} from './Animaux/tempo.component';
 // import { ListAnimauxComponent } from './Animaux/list-animaux.component';
+
+// import { ListAnimalComponentComponent } from './list-animal-component/list-animal-component.component';
+import { ListAnimalComponent } from './Animaux/list-animal/list-animal.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+
     TestComponent,
-    TempoComponent
+    TempoComponent,
 
 
     // ListAnimauxComponent
+
+    
+    ListAnimalComponent
+
   ],
   imports: [
     BrowserModule,

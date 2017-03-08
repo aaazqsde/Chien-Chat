@@ -7,8 +7,9 @@ export const ANIMAUX:Animal[] =[
     nom:'Lennon',
     race:'Shar-Pei',
     sexe:'mâle',
+    picture:"http://ruedusharpei.free.fr/Chronique/Pourquoi/Shao9-08-03g.jpg",
     note:[19],
-    date_de_naissance:'25/06/2015',
+    date_de_naissance:new Date()
   },
   {
     id:2,
@@ -16,7 +17,8 @@ export const ANIMAUX:Animal[] =[
     nom:'Kwiskas',
     race:'siamois',
     sexe:'femelle',
+    picture:"https://static.wamiz.fr/images/animaux/chats/large/siamois.jpg",
     note:[13],
-    date_de_naissance:'14/02/2016'
+    date_de_naissance:new Date()
   }
 ];
