@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { Animal } from './Animaux/animal';
 import { ANIMAUX } from './Animaux/mock-animaux';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
