@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
-import { Animal } from './animal';
-import { ANIMAUX } from './mock-animaux';
+import { Animal } from './Animaux/animal';
+import { ANIMAUX } from './Animaux/mock-animaux';
 
 @Component({
   selector: 'app-root',
