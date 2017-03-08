@@ -1,0 +1,44 @@
+
+<h1 class='center'>Chiens</h1>
+
+      <div class='container'>
+
+        <div class="row">
+
+        <div *ngFor='let animal of chiens' class="col s6 m4">
+
+          <div class="card horizontal" (click)="selectAnimal(animal)" >
+
+            <div class="card-image">
+
+              <img [src]="animal.picture">
+
+            </div>
+
+            <div class="card-stacked">
+
+              <div class="card-content">
+                <p>{{ animal.id }}</p>
+                <p>{{ animal.type }}</p>
+                <p>{{ animal.nom }}</p>
+                <p>{{ animal.race }}</p>
+                <p>{{ animal.sexe }}</p>
+                <p>{{ animal.note }}</p>
+
+                <p><small>{{ animal.date_de_naissance | date:"dd/MM/yyyy" }}</small></p>
+
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        </div>
+
+      </div>
+
+  `

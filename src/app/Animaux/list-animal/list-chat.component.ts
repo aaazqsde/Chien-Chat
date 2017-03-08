@@ -4,18 +4,27 @@ import { ANIMAUX } from 'app/Animaux/mock-animaux';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-list-animal',
-  templateUrl: './list-animal.component.html'
+  selector: 'app-list-chat',
+  templateUrl: './list-chat.component.html'
 })
-export class ListAnimalComponent implements OnInit {
+export class ListChatComponent implements OnInit {
 
   animaux: Animal[]=null;
+  chats : Animal[]=null;
 
 
   constructor(private router:Router) { }
 
   ngOnInit():void {
     this.animaux=ANIMAUX;
+    this.chats=[];
+
+      for (let ani of this.animaux){
+        if (ani.type==="chat"){
+          this.chats.push(ani);
+        }
+      }
+
   }
   selectAnimal(animal:Animal):void{
     console.log('Vous avez selectionné '+ animal.nom);
