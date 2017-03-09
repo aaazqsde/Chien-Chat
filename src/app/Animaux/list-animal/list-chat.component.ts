@@ -28,7 +28,7 @@ export class ListChatComponent implements OnInit {
   }
   selectAnimal(animal:Animal):void{
     console.log('Vous avez selectionné '+ animal.nom);
-    let link = ['animaux', animal.id];
+    let link = ['chats', animal.id];
     this.router.navigate(link);
   }
 

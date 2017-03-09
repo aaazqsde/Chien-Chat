@@ -13,7 +13,12 @@ import {TempoComponent} from './Animaux/tempo.component';
 import { ListAnimalComponent } from './Animaux/list-animal/list-animal.component';
 import {ListChienComponent} from './Animaux/list-animal/list-chien.component';
 import {ListChatComponent} from './Animaux/list-animal/list-chat.component';
+
+import {DetailAnimalComponent} from './Animaux/detail-animal.component';
+import {PageNotFoundComponent} from './page-not-found.component';
+
 import { AuthGuard } from './auth-guard.service';
+
 
 
 @NgModule({
@@ -24,7 +29,9 @@ import { AuthGuard } from './auth-guard.service';
     // ListAnimauxComponent
     ListAnimalComponent,
     ListChienComponent,
-    ListChatComponent
+    ListChatComponent,
+    DetailAnimalComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
