@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-animal',
-  templateUrl: './list-animal.component.html'
+  templateUrl: './list-animal.component.html',
+  styleUrls: ['./list-animal.component.css']
 })
 export class ListAnimalComponent implements OnInit {
 
@@ -19,7 +20,7 @@ export class ListAnimalComponent implements OnInit {
   }
   selectAnimal(animal:Animal):void{
     console.log('Vous avez selectionné '+ animal.nom);
-    let link = ['animaux', animal.id];
+    let link = ['animaux.html', animal.id];
     this.router.navigate(link);
   }
 
