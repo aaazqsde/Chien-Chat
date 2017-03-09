@@ -5,12 +5,13 @@ import {TempoComponent} from './Animaux/tempo.component';
 import {ListAnimalComponent} from './Animaux/list-animal/list-animal.component';
 import {ListChienComponent} from './Animaux/list-animal/list-chien.component';
 import {ListChatComponent} from './Animaux/list-animal/list-chat.component';
+import { AuthGuard } from './auth-guard.service';
 
 const appRoutes: Routes = [
   { path: 'animaux', component: ListAnimalComponent},
   { path: 'chiens', component: ListChienComponent},
   { path: 'chats', component: ListChatComponent},
-  { path: 'profil', component: TempoComponent},
+  { path: 'profil', component: TempoComponent , canActivate :[AuthGuard]},
   {path: '', redirectTo: '', pathMatch: 'full'}
 ];
 

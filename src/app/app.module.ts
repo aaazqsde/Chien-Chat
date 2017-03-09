@@ -13,6 +13,7 @@ import {TempoComponent} from './Animaux/tempo.component';
 import { ListAnimalComponent } from './Animaux/list-animal/list-animal.component';
 import {ListChienComponent} from './Animaux/list-animal/list-chien.component';
 import {ListChatComponent} from './Animaux/list-animal/list-chat.component';
+import { AuthGuard } from './auth-guard.service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import {ListChatComponent} from './Animaux/list-animal/list-chat.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
