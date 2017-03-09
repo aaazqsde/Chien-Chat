@@ -19,8 +19,7 @@ export class DetailAnimalComponent implements OnInit {
     constructor (private route: ActivatedRoute, private router: Router, private animauxService: AnimauxService) {}
 
     ngOnInit() {
-      this.animaux = ANIMAUX;
-
+      
       let id = +this.route.snapshot.params['id'];
       this.animal = this.animauxService.getAnimal(id);
     }
