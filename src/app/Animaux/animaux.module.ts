@@ -6,6 +6,7 @@ import {ListChienComponent} from './list-animal/list-chien.component';
 import {ListChatComponent} from './list-animal/list-chat.component';
 import {DetailAnimalComponent} from './detail-animal.component';
 import {TempoComponent} from './tempo.component';
+import { AnimauxService } from './animaux.service';
 
 import {AnimauxRoutingModule} from './animaux-routing.module';
 
@@ -18,6 +19,6 @@ import {AnimauxRoutingModule} from './animaux-routing.module';
     DetailAnimalComponent,
     TempoComponent
   ],
-  providers: []
+  providers: [AnimauxService]
 })
 export class AnimauxModule {}
