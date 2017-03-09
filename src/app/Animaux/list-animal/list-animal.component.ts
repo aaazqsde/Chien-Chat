@@ -7,7 +7,6 @@ import { AnimauxService } from 'app/Animaux/animaux.service';
 @Component({
   selector: 'app-list-animal',
   templateUrl: './list-animal.component.html',
-  providers:[AnimauxService],
   styleUrls: ['./list-animal.component.css']
 })
 export class ListAnimalComponent implements OnInit {

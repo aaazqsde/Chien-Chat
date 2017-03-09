@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, Params} from '@angular/router';
 import {Animal} from './animal';
 import {ANIMAUX} from './mock-animaux';
+import { AnimauxService } from './animaux.service';
 
 
 @Component ({
@@ -15,17 +16,13 @@ export class DetailAnimalComponent implements OnInit {
     animal: Animal = null;
 
 
-    constructor (private route: ActivatedRoute, private router: Router) {}
+    constructor (private route: ActivatedRoute, private router: Router, private animauxService: AnimauxService) {}
 
     ngOnInit() {
       this.animaux = ANIMAUX;
 
       let id = +this.route.snapshot.params['id'];
-      for (let i = 0; i < this.animaux.length; i++) {
-        if (this.animaux[i].id == id){
-          this.animal = this.animaux[i];
-        }
-      }
+      this.animal = this.animauxService.getAnimal(id);
     }
 
     goBack() {
