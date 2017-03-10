@@ -19,7 +19,7 @@ export class DetailAnimalComponent implements OnInit {
     constructor (private route: ActivatedRoute, private router: Router, private animauxService: AnimauxService) {}
 
     ngOnInit() {
-      
+
       let id = +this.route.snapshot.params['id'];
       this.animal = this.animauxService.getAnimal(id);
     }
@@ -28,4 +28,11 @@ export class DetailAnimalComponent implements OnInit {
 
       window.history.back();
     }
+
+    goEdit(animal: Animal): void {
+      let link = ['/animal/edit', animal.id];
+      this.router.navigate(link);
+    }
+
+
 }
