@@ -1,5 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { EditAnimalComponent } from './edit-animal.component';
+import { AnimalFormComponent } from './animal-form.component';
 
 import {ListAnimalComponent} from './list-animal/list-animal.component';
 import {ListChienComponent} from './list-animal/list-chien.component';
@@ -11,13 +14,15 @@ import { AnimauxService } from './animaux.service';
 import {AnimauxRoutingModule} from './animaux-routing.module';
 
 @NgModule({
-  imports: [CommonModule, AnimauxRoutingModule],
+  imports: [CommonModule, FormsModule, AnimauxRoutingModule],
   declarations: [
     ListAnimalComponent,
     ListChienComponent,
     ListChatComponent,
     DetailAnimalComponent,
-    TempoComponent
+    TempoComponent,
+    EditAnimalComponent,
+    AnimalFormComponent
   ],
   providers: [AnimauxService]
 })
