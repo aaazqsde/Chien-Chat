@@ -1,5 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { EditAnimalComponent } from './edit-animal.component';
+import { AnimalFormComponent } from './animal-form.component';
 
 import {ListAnimalComponent} from './list-animal/list-animal.component';
 import {ListChienComponent} from './list-animal/list-chien.component';
@@ -16,7 +19,9 @@ import {AnimalFormComponent} from './animal-form.component';
 
 
 @NgModule({
-  imports: [CommonModule, AnimauxRoutingModule, FormsModule],
+
+  imports: [CommonModule, FormsModule, AnimauxRoutingModule],
+  
   declarations: [
     ListAnimalComponent,
     ListChienComponent,

@@ -23,6 +23,11 @@ export class DetailAnimalComponent implements OnInit {
       let id = +this.route.snapshot.params['id'];
       this.animal = this.animauxService.getAnimal(id);
     }
+    // On crée une méthode qui s'occupe de la redirection
+    goEdit(animal: Animal): void {
+      let link = ['/animal/edit', animal.id];
+      this.router.navigate(link);
+}
 
     goBack() {
 
