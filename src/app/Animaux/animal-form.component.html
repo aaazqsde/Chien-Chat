@@ -1,0 +1,68 @@
+<form *ngIf="animal" (ngSubmit)="onSubmit()" #animalForm="ngForm">
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card-panel">
+
+        <!-- Pokemon name -->
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" class="form-control" id="nom"
+                 [(ngModel)]="animal.nom" name="nom"
+                 #nom="ngModel">
+        </div>
+
+        <!-- Pokemon picture -->
+        <div class="form-group">
+          <label for="type">Type</label>
+          <input type="text" class="form-control" id="type"
+                 [(ngModel)]="animal.type" name="type"
+                 #type="ngModel">
+        </div>
+
+        <!-- Pokemon hp -->
+        <div class="form-group">
+          <label for="race">Race</label>
+          <input type="text" class="form-control" id="race"
+                 [(ngModel)]="animal.race" name="race"
+                 #race="ngModel">
+        </div>
+
+        <!-- Pokemon cp -->
+        <div class="form-group">
+          <label for="sexe">Sexe</label>
+          <input type="text" class="form-control" id="sexe"
+                 [(ngModel)]="animal.sexe" name="sexe"
+                 #sexe="ngModel">
+        </div>
+
+        <!-- Pokemon types -->
+        <div class="form-group">
+          <label for="note">Notes</label>
+        <div *ngFor="let note of notes" class="row">
+          <input type="checkbox"
+                 class="filled-in"
+                 id="{{ note }}"
+                 [value]="note"
+                 [checked]="hasNote(note)"
+                 (change)="selectNote($event, note)"
+                />
+          <label [attr.for]="note">
+            <span class="{{ note }}">{{ note }}</span>
+          </label>
+        </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="divider"></div>
+        <div class="section center">
+          <button type="submit"
+                  class="waves-effect waves-light btn"
+                  [disabled]="!animalForm.form.valid">
+                  Valider</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
+<h3 *ngIf="!animal" class="center">Aucun animal à éditer...</h3>
