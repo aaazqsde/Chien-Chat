@@ -33,4 +33,11 @@ export class DetailAnimalComponent implements OnInit {
 
       window.history.back();
     }
+
+    goEdit(animal: Animal): void {
+      let link = ['/animal/edit', animal.id];
+      this.router.navigate(link);
+    }
+
+
 }

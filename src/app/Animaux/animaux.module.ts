@@ -13,8 +13,15 @@ import { AnimauxService } from './animaux.service';
 
 import {AnimauxRoutingModule} from './animaux-routing.module';
 
+import {FormsModule} from '@angular/forms';
+import {EditAnimalComponent} from './edit-animal.component';
+import {AnimalFormComponent} from './animal-form.component';
+
+
 @NgModule({
+
   imports: [CommonModule, FormsModule, AnimauxRoutingModule],
+  
   declarations: [
     ListAnimalComponent,
     ListChienComponent,
