@@ -19,6 +19,7 @@ export class DetailAnimalComponent implements OnInit {
     constructor (private route: ActivatedRoute, private router: Router, private animauxService: AnimauxService) {}
 
     ngOnInit() {
+
       this.getAnimal();
       console.log(this.animal);
 
@@ -31,10 +32,18 @@ export class DetailAnimalComponent implements OnInit {
     this.animauxService.getAnimal('/'+id).then(response => {this.animal = response[0]});
       console.log(this.animal);
   });
+
 }
 
     goBack() {
 
       window.history.back();
     }
+
+    goEdit(animal: Animal): void {
+      let link = ['/animal/edit', animal.id];
+      this.router.navigate(link);
+    }
+
+
 }
