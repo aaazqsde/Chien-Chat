@@ -10,6 +10,7 @@ import { AnimauxService } from './animaux.service';
 
 import {AnimauxRoutingModule} from './animaux-routing.module';
 
+
 @NgModule({
   imports: [CommonModule, AnimauxRoutingModule],
   declarations: [

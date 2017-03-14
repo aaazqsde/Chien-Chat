@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal }from 'app/Animaux/animal';
-import { ANIMAUX } from 'app/Animaux/mock-animaux';
+//import { ANIMAUX } from 'app/Animaux/mock-animaux';
 import { Router } from '@angular/router';
 import { AnimauxService } from 'app/Animaux/animaux.service';
 
@@ -18,15 +18,19 @@ export class ListAnimalComponent implements OnInit {
 
   ngOnInit():void {
     //this.animaux=ANIMAUX;
+
     this.getAnimaux();
   }
   getAnimaux():void{
-    this.animaux=this.animauxService.getAnimaux();
+    this.animauxService.getAnimaux().then(animaux => this.animaux = animaux);
+    //console.log(this.animaux);
   }
+
   selectAnimal(animal:Animal):void{
     console.log('Vous avez selectionné '+ animal.nom);
-    let link = ['animaux', animal.id];
+    let link = ['animaux', animal._id];
     this.router.navigate(link);
   }
+
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal }from 'app/Animaux/animal';
-import { ANIMAUX } from 'app/Animaux/mock-animaux';
+//import { ANIMAUX } from 'app/Animaux/mock-animaux';
 import { Router } from '@angular/router';
 import { AnimauxService } from 'app/Animaux/animaux.service';
 
@@ -10,7 +10,7 @@ import { AnimauxService } from 'app/Animaux/animaux.service';
 })
 export class ListChatComponent implements OnInit {
 
-  animaux: Animal[]=null;
+
   chats : Animal[]=null;
 
 
@@ -22,12 +22,12 @@ export class ListChatComponent implements OnInit {
   }
 
   getChats(){
-    this.chats = this.animauxService.getChats();
+    this.animauxService.getChats().then(chats => this.chats = chats);
   }
 
   selectAnimal(animal:Animal):void{
     console.log('Vous avez selectionné '+ animal.nom);
-    let link = ['chats', animal.id];
+    let link = ['chats', animal._id];
     this.router.navigate(link);
   }
 

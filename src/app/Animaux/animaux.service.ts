@@ -1,25 +1,62 @@
 import { Injectable } from '@angular/core';
-import { Animal } from 'app/Animaux/animal';
-import { ANIMAUX } from 'app/Animaux/mock-animaux';
+import { Headers, Http} from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
+import { Animal } from './animal';
+//import { ANIMAUX } from 'app/Animaux/mock-animaux';
 
 @Injectable()
 
 export class AnimauxService {
 
-getAnimaux():Animal[]{
-  return ANIMAUX;
+  //private headers = new Headers({'Content-Type':'application/json'});
+  private animauxUrl = 'http://localhost:3000/animaux';
+  private chienUrl = 'http://localhost:3000/chiens';
+  private chatUrl = 'http://localhost:3000/chats';
+
+  constructor(private http: Http) {}
+
+getAnimaux():Promise<Animal[]>{
+  return this.http.get(this.animauxUrl)
+              .toPromise()
+              .then(response => response.json() as Animal[])
 }
 
-getChiens(): Animal[]{
+
+getAnimal(id:string): Promise<Animal>{
+
+  return this.http.get(this.animauxUrl + id)
+              .toPromise()
+              .then(response => response.json() as Animal)
+
+}
+getChiens():Promise <Animal[]>{
+  return this.http.get(this.chienUrl)
+              .toPromise()
+              .then(response => response.json() as Animal[])
+
+}
+getChats():Promise <Animal[]>{
+  return this.http.get(this.chatUrl)
+              .toPromise()
+              .then(response => response.json() as Animal[])
+
+}
+/*
+getChiens():Promise <Animal[]>{
+  let animaux = this.http.get(this.chienUrl)
+              .toPromise()
+              .then(response => response.json() as Animal[])
   let chiens: Animal[]=[];
-  for (let ani of ANIMAUX){
+  for (let ani of animaux){
     if (ani.type === "chien"){
       chiens.push(ani);
     }
   }
-  return chiens;
+  return chiens
 }
-
+/*
 getChats(): Animal[]{
   let chats: Animal[]=[];
   for (let ani of ANIMAUX){
@@ -49,15 +86,8 @@ getChien(id: number){
 }
 
 
-getAnimal(id:number){
-  let animaux = this.getAnimaux();
 
-  for(let index=0;index<animaux.length;index++){
-    if(id==animaux[index].id){
-      return animaux[index];
-    }
-  }
-}
+*/
 
 
 }

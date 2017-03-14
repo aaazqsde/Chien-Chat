@@ -1,10 +1,10 @@
 export class Animal {
-  id : number;
+  _id? : string;
   type:string;
   nom:string;
   race : string;
   sexe:string;
   picture:string;
-  note:Array<number>;
-  date_de_naissance:Date;
+  //note:Array<number>;
+  date_de_naissance:string;
 }
